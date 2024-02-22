@@ -3,6 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 import entities.Product;
+import entities.Rectangle;
 import entities.Triangle;
 
 public class Program {
@@ -85,7 +86,12 @@ public class Program {
 			
 		case 3:
 			
-			
+			System.out.println("Enter rectangle width and height: ");
+			Rectangle rec = new Rectangle();
+			rec.width = sc.nextDouble();
+			rec.height = sc.nextDouble();
+			System.out.println(rec);
+			break;
 		}
 		
 		
