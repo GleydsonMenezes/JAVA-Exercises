@@ -9,6 +9,7 @@ import entities.Rectangle;
 import entities.Student;
 import entities.Triangle;
 import util.Calculator;
+import util.CurrencyConverter;
 
 public class Program {
 
@@ -25,6 +26,7 @@ public class Program {
 				+ "4 - Employee\n"
 				+ "5 - Student\n"
 				+ "6 - Calculator\n"
+				+ "7 - Dollar Price\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -136,7 +138,15 @@ public class Program {
 			System.out.printf("Circumference: %.2f%n", Calculator.circumference(radius));
 			System.out.printf("Volume: %.2f%n", Calculator.volume(radius));
 			System.out.printf("PI Value:: %.2f%n", Calculator.PI);
-		
+			break;
+			
+		case 7:
+			System.out.println("What is the dollar price?");
+			double dollarPrice = sc.nextDouble();
+			System.out.println("How many dollars will be bought?");
+			double amount = sc.nextDouble();
+			System.out.printf("Amount to be paid in reais = %.2f", CurrencyConverter.dollarToReais(dollarPrice, amount));
+			break;
 		default:
 			System.exit(0);
 			
