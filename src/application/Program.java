@@ -6,6 +6,7 @@ import java.util.Scanner;
 import entities.Employee;
 import entities.Product;
 import entities.Rectangle;
+import entities.Student;
 import entities.Triangle;
 
 public class Program {
@@ -109,10 +110,28 @@ public class Program {
 			System.out.println("Updated data: "+ employee);
 			break;
 			
+		case 5:
+			Student student = new Student();
+			System.out.println("Enter Student data: ");
+			System.out.print("Name: ");
+			student.name = sc.nextLine();
+			for (int i = 0;i < 3; i++) {
+				System.out.print("#"+ (i+1) + " season grade");
+				student.sumGrade += sc.nextDouble();
+			}
+			if (student.sumGrade < 60.0) {
+				System.out.println("FAILED");
+				System.out.printf("MISSING %.2f POINTS%n", student.isPassed());
+				}
+				else {
+				System.out.println("FINAL GRADE = "+ String.format("%.2f", student.sumGrade));
+				System.out.println("PASS");
+				}
+			
+		default:
+			System.exit(0);
+			
 		}
-		
-		
-
 		
 		sc.close();
 	}
