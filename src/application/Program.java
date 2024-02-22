@@ -2,6 +2,8 @@ package application;
 
 import java.util.Locale;
 import java.util.Scanner;
+
+import entities.Employee;
 import entities.Product;
 import entities.Rectangle;
 import entities.Triangle;
@@ -73,9 +75,8 @@ public class Program {
 			y.b = sc.nextDouble();
 			y.c = sc.nextDouble();
 			
-			System.out.printf("Triangle x area: %.4f%n", x.area());
-			System.out.printf("Triangle y area: %.4f%n", y.area());
-			
+			System.out.println("Triangle X area: " + x.area());
+			System.out.println("Triangle Y area: " + y.area());
 			if (x.area() > y.area()) {
 				System.out.println("Larger area: X");
 			} 
@@ -92,6 +93,22 @@ public class Program {
 			rec.height = sc.nextDouble();
 			System.out.println(rec);
 			break;
+			
+		case 4:
+			Employee employee = new Employee();
+			System.out.println("Enter Employee data: ");
+			System.out.print("Name: ");
+			employee.name = sc.nextLine();
+			System.out.print("Gross Salary: ");
+			employee.grossSalary = sc.nextDouble();
+			System.out.print("Tax: ");
+			employee.tax = sc.nextDouble();
+			System.out.println("Employee: " + employee);
+			System.out.println("Which percentage to increase salary?");
+			employee.increaseSalary(sc.nextDouble());
+			System.out.println("Updated data: "+ employee);
+			break;
+			
 		}
 		
 		
@@ -99,5 +116,6 @@ public class Program {
 		
 		sc.close();
 	}
+	
 
-}
+}				
