@@ -8,6 +8,7 @@ import entities.Product;
 import entities.Rectangle;
 import entities.Student;
 import entities.Triangle;
+import util.Calculator;
 
 public class Program {
 
@@ -23,6 +24,7 @@ public class Program {
 				+ "3 - Rectangle\n"
 				+ "4 - Employee\n"
 				+ "5 - Student\n"
+				+ "6 - Calculator\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -127,7 +129,14 @@ public class Program {
 				System.out.println("FINAL GRADE = "+ String.format("%.2f", student.sumGrade));
 				System.out.println("PASS");
 				}
-			
+		
+		case 6:		
+			System.out.println("Enter radius: ");
+			double radius = sc.nextDouble();
+			System.out.printf("Circumference: %.2f%n", Calculator.circumference(radius));
+			System.out.printf("Volume: %.2f%n", Calculator.volume(radius));
+			System.out.printf("PI Value:: %.2f%n", Calculator.PI);
+		
 		default:
 			System.exit(0);
 			
